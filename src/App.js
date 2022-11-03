@@ -13,12 +13,16 @@ function App() {
   return (
     
     <div className="App">
-       {
+      <div>
+      {
+      friends.map(friend => <Friend name={friend.fname} age={friend.fage}></Friend>)
+      }
+        </div>
+        <div>
+        {
       heros.map(hero => <Person name={hero}></Person>)
       }
-      {
-      friends.map(friend => <Friend name={friend.fname}></Friend>)
-      }
+        </div>
     </div>
   );
 }
@@ -38,7 +42,7 @@ function Friend (props){
   return(
     <div className='person'>
       <h3>{props.name}</h3>
-      <p>{props.age}</p>
+      <p>Age: {props.age}</p>
     </div>
   )
 }
