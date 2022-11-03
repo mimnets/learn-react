@@ -2,18 +2,29 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const heros = ['Aladdin', 'Joshimuddin', 'Kolimuddin','Solimuddin', 'Dalimuddin'];
+  const friends = [
+    {fname:'Monir', fage:23},
+    {fname:'Ponoir', fage:33},
+    {fname:'Konir', fage:43},
+    {fname:'donir', fage:13}
+  ]
+ 
   return (
+    
     <div className="App">
-      <Person name="Monir Khan" job="Kono Kaaj Nai"></Person>
-      <Person name="Ponir Khan" job="Khoi Vaaj"></Person>
-      <Person name="Jigor Khan" job="Ghee Vaaj"></Person>
-      <Person></Person>
-      <Friend number="01743762978"></Friend>
+       {
+      heros.map(hero => <Person name={hero}></Person>)
+      }
+      {
+      friends.map(friend => <Friend name={friend.fname}></Friend>)
+      }
     </div>
   );
 }
 
 function Person (props){
+  
   console.log(props)
   return (
     <div className='person'>
@@ -25,9 +36,9 @@ function Person (props){
 
 function Friend (props){
   return(
-    <div>
-      <h3>{props.number}</h3>
-      <p>Chakri Bakri Nai</p>
+    <div className='person'>
+      <h3>{props.name}</h3>
+      <p>{props.age}</p>
     </div>
   )
 }
